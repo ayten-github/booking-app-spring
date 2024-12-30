@@ -7,9 +7,10 @@ import az.edu.turing.bookingappspring.entity.PassengerEntity;
 import az.edu.turing.bookingappspring.repository.FlightRepository;
 import az.edu.turing.bookingappspring.repository.PassengerRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class BookingMapper {
     private final PassengerRepository passengerRepository;
     private final FlightRepository flightRepository;

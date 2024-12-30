@@ -1,14 +1,11 @@
-package az.edu.turing.bookingappspring.request;
+package az.edu.turing.bookingappspring.model.request;
+
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
+@Data
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 public class BookingRequest {
 
     private final Integer bookingId;

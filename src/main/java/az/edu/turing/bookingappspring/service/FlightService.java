@@ -4,7 +4,7 @@ import az.edu.turing.bookingappspring.dto.FlightDto;
 import az.edu.turing.bookingappspring.entity.FlightEntity;
 import az.edu.turing.bookingappspring.mapper.FlightMapper;
 import az.edu.turing.bookingappspring.repository.FlightRepository;
-import az.edu.turing.bookingappspring.request.FlightRequest;
+import az.edu.turing.bookingappspring.model.request.FlightRequest;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class FlightService {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime endTime = now.plusHours(durationInHours);  // dynamically set the end time
 
-        return flightRepository.findFlightsWithinTimePeriod(now, endTime).stream()
+        return flightRepository.findByDepartureTimeBetween(now, endTime).stream()
                 .map(flightMapper::toFlightDto)
                 .toList();
     }

@@ -1,7 +1,7 @@
 package az.edu.turing.bookingappspring.controller;
 
 import az.edu.turing.bookingappspring.dto.BookingDto;
-import az.edu.turing.bookingappspring.request.BookingRequest;
+import az.edu.turing.bookingappspring.model.request.BookingRequest;
 import az.edu.turing.bookingappspring.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -30,8 +31,8 @@ public class BookingController {
     }
 
     @GetMapping
-    public ResponseEntity<Collection<BookingDto>> getAllBookings() {
-        Collection<BookingDto> bookings = bookingService.getAllBookings();
+    public ResponseEntity<List<BookingDto>> getAllBookings() {
+        List<BookingDto> bookings = bookingService.getAllBookings();
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 

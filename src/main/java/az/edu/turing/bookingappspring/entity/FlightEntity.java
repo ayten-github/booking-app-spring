@@ -2,10 +2,10 @@ package az.edu.turing.bookingappspring.entity;
 
 
 import jakarta.persistence.Entity;
+import java.time.LocalDateTime;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 @Entity
 @Data
 public class FlightEntity {

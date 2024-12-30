@@ -2,13 +2,9 @@ package az.edu.turing.bookingappspring.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 
 @Entity
-@Getter
-@Setter
 @Data
 public class BookingEntity {
     @Id

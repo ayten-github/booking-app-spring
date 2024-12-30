@@ -1,4 +1,4 @@
-package az.edu.turing.bookingappspring.request;
+package az.edu.turing.bookingappspring.model.request;
 
 
 import lombok.*;

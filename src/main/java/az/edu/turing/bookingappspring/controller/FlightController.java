@@ -1,7 +1,7 @@
 package az.edu.turing.bookingappspring.controller;
 
 import az.edu.turing.bookingappspring.dto.FlightDto;
-import az.edu.turing.bookingappspring.request.FlightRequest;
+import az.edu.turing.bookingappspring.model.request.FlightRequest;
 import az.edu.turing.bookingappspring.service.FlightService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

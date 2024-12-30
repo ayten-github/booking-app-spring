@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
-import java.util.List;
 
 @Entity
 @Data

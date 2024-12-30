@@ -5,12 +5,13 @@ import az.edu.turing.bookingappspring.mapper.PassengerMapper;
 import az.edu.turing.bookingappspring.repository.PassengerRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PassengerService {
 
     private final PassengerRepository passengerRepository;
