@@ -26,7 +26,7 @@ public class BookingDto {
     public String toString() {
         return "BookingDto{" +
                 "bookingId=" + bookingId +
-                ", fullName='" + fullName + '\'' +
+               ", fullName='" + fullName + '\'' +
                 ", departureCity='" + departureCity + '\'' +
                 ", arrivalCity='" + arrivalCity + '\'' +
                 ", time=" + time +
@@ -38,12 +38,12 @@ public class BookingDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookingDto that = (BookingDto) o;
-        return bookingId == that.bookingId && Objects.equals(fullName, that.fullName) && Objects.equals(departureCity,
+        return bookingId == that.bookingId && Objects.equals(fullName,that.fullName)&&Objects.equals(departureCity,
                 that.departureCity) && Objects.equals(arrivalCity, that.arrivalCity) && Objects.equals(time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookingId, fullName, departureCity, arrivalCity, time);
+        return Objects.hash(bookingId,fullName, departureCity, arrivalCity, time);
     }
 }

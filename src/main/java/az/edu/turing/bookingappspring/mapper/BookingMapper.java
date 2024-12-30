@@ -16,7 +16,7 @@ public class BookingMapper {
     private final FlightRepository flightRepository;
 
     public BookingMapper(PassengerRepository passengerRepository, FlightRepository flightRepository) {
-        this.passengerRepository = passengerRepository;
+       this.passengerRepository = passengerRepository;
         this.flightRepository = flightRepository;
     }
 
