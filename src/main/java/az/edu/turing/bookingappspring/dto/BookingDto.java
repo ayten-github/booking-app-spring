@@ -9,14 +9,14 @@ import java.util.Objects;
 @Setter
 public class BookingDto {
     private int bookingId;
-    private String fullName;
+    private int customerId;
     private String departureCity;
     private String arrivalCity;
     private LocalDateTime time;
 
-    public BookingDto(int bookingId, String fullName, String departureCity, String arrivalCity, LocalDateTime time) {
+    public BookingDto(int bookingId, int customerId, String departureCity, String arrivalCity, LocalDateTime time) {
         this.bookingId = bookingId;
-        this.fullName = fullName;
+        this.customerId = customerId;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.time = time;
@@ -26,7 +26,7 @@ public class BookingDto {
     public String toString() {
         return "BookingDto{" +
                 "bookingId=" + bookingId +
-               ", fullName='" + fullName + '\'' +
+               ", customerId='" + customerId + '\'' +
                 ", departureCity='" + departureCity + '\'' +
                 ", arrivalCity='" + arrivalCity + '\'' +
                 ", time=" + time +
@@ -38,12 +38,12 @@ public class BookingDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookingDto that = (BookingDto) o;
-        return bookingId == that.bookingId && Objects.equals(fullName,that.fullName)&&Objects.equals(departureCity,
+        return bookingId == that.bookingId && Objects.equals(customerId,that.customerId)&&Objects.equals(departureCity,
                 that.departureCity) && Objects.equals(arrivalCity, that.arrivalCity) && Objects.equals(time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookingId,fullName, departureCity, arrivalCity, time);
+        return Objects.hash(bookingId,customerId, departureCity, arrivalCity, time);
     }
 }

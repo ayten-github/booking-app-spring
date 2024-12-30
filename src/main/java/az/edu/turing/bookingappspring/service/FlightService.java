@@ -21,7 +21,7 @@ public class FlightService {
 
     public List<FlightDto> getFlightsForNextHours(int durationInHours) {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endTime = now.plusHours(durationInHours);  // dynamically set the end time
+        LocalDateTime endTime = now.plusHours(durationInHours);
 
         return flightRepository.findByDepartureTimeBetween(now, endTime).stream()
                 .map(flightMapper::toFlightDto)

@@ -8,7 +8,6 @@ import az.edu.turing.bookingappspring.repository.FlightRepository;
 import az.edu.turing.bookingappspring.repository.PassengerRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
 public class BookingMapper {
@@ -21,30 +20,17 @@ public class BookingMapper {
     }
 
     public BookingDto toBookingDto(BookingEntity booking) {
-        String name = passengerRepository
-                .findById(booking.getPassenger_id())
-                .map(PassengerEntity::getName)
-                .orElseThrow(() -> new EntityNotFoundException("Passenger not found with ID: " + booking.getPassenger_id()));
-        String surname = passengerRepository
-                .findById(booking.getPassenger_id())
-                .map(PassengerEntity::getSurname)
-                .orElseThrow(() -> new EntityNotFoundException("Surname not found with ID: " + booking.getPassenger_id()));
-        String fullName = name + " " + surname;
         FlightEntity flight = flightRepository.findById(booking.getFlight_id())
                 .orElseThrow(() -> new EntityNotFoundException("Flight not found with ID: " + booking.getFlight_id()));
-
+int passengerRepositoryId=passengerRepository.findById(booking.getPassenger_id()).map(PassengerEntity::getId).
+        orElseThrow(()->new EntityNotFoundException("Passenger not found"));
         return new BookingDto(
                 booking.getId(),
-                fullName,
+                passengerRepositoryId,
                 flight.getDepartureCity(),
                 flight.getArrivalCity(),
                 flight.getDepartureTime()
         );
     }
-//    public BookingDto toBookingDto(FlightEntity flight) {
-//
-//        return new BookingDto()
-//    }
-
 
 }
