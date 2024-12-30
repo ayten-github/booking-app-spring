@@ -25,20 +25,26 @@ public class BookingMapper {
                 .findById(booking.getPassenger_id())
                 .map(PassengerEntity::getName)
                 .orElseThrow(() -> new EntityNotFoundException("Passenger not found with ID: " + booking.getPassenger_id()));
-        String surname=passengerRepository
+        String surname = passengerRepository
                 .findById(booking.getPassenger_id())
                 .map(PassengerEntity::getSurname)
-                .orElseThrow(()->new EntityNotFoundException("Surname not found with ID: " + booking.getPassenger_id()));
-        String fullName=name+" "+surname;
+                .orElseThrow(() -> new EntityNotFoundException("Surname not found with ID: " + booking.getPassenger_id()));
+        String fullName = name + " " + surname;
         FlightEntity flight = flightRepository.findById(booking.getFlight_id())
                 .orElseThrow(() -> new EntityNotFoundException("Flight not found with ID: " + booking.getFlight_id()));
 
-       return new BookingDto(
-               booking.getId(),
-               fullName,
-               flight.getDepartureCity(),
-               flight.getArrivalCity(),
-               flight.getDepartureTime()
-       );
-}
+        return new BookingDto(
+                booking.getId(),
+                fullName,
+                flight.getDepartureCity(),
+                flight.getArrivalCity(),
+                flight.getDepartureTime()
+        );
+    }
+//    public BookingDto toBookingDto(FlightEntity flight) {
+//
+//        return new BookingDto()
+//    }
+
+
 }
